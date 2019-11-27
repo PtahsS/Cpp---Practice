@@ -1,21 +1,21 @@
 #include <iostream>
 using namespace std;
-
+//ghghg
 int main()
 {
 	setlocale(LC_ALL, "ru");
 	while (true)
 	{
-		cout << "Введите количество символов:   ";
+		cout << "Enter count of symbols:   ";
 		int count;
 		cin >> count;
-		cout << "Введите символ:   ";
+		cout << "Enter symbol:   ";
 		char symbol;
 		cin >> symbol;
-		cout << "Выберите направление строки:" << endl
-			<< "1 - горизонтальное," << endl
-			<< "2 - вертикальноею" << endl
-			<< "Введите соответствующее число:   ";
+		cout << "Enter direction of row:" << endl
+			<< "1 - horizontal," << endl
+			<< "2 - vertical" << endl
+			<< "Enter suitable number:   ";
 
 		bool check = false;
 		char lineType = ' ';
@@ -29,7 +29,7 @@ int main()
 			}
 			else
 			{
-				cout << "Введите число 1 или 2:   ";
+				cout << "Enter number '1' or '2':   ";
 			}
 		}
 		cout << endl;
