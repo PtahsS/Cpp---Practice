@@ -2,43 +2,40 @@
 #include <ctime>
 using namespace std;
 
-// Two-dimensional dynamic array. Create, fill, print
+// Dynamic arrays. Crete, print.
+
+void FillArray(int* const arr, const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 40;
+	}
+}
+void PrintArray(const int* const arr, const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << '\t';
+	}
+	cout << endl;
+}
 
 int main()
 {
 	srand(time(NULL));
-	int rows, cols;
-	cout << "Enter count of rows:   ";
-	cin >> rows;
+	int size;
+	cout << "Enter size of array:  ";
+	cin >> size;
 
-	cout << "Enter count of cols:   ";
-	cin >> cols;
+	int* arr = new int[size];
+	FillArray(arr, size);
+	PrintArray(arr, size);
+	delete[] arr;
 
-	int** arr = new int* [rows];
-	for (int i = 0; i < rows; i++)
-	{
-		arr[i] = new int[cols];
-
-	}
-
-	for (int i = 0; i < rows; i++)
-	{
-		for (int j = 0; j < cols; j++)
-		{
-			arr[i][j] = rand() % 30;
-		}
-	}
-
-
-	for (int i = 0; i < rows; i++)
-	{
-		for (int j = 0; j < cols; j++)
-		{
-			cout << arr[i][j]<< '\t';
-		}
-		cout << endl;
-	}
-
+	int* arr2 = new int[size];
+	FillArray(arr2, size);
+	PrintArray(arr2, size);
+	delete[] arr2;
 
 	return 0;
 }
