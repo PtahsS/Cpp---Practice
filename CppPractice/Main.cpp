@@ -1,23 +1,23 @@
 #include <iostream>
 using namespace std;
 
-// Array pointer. Create array, make pointer, show array by pointer.
+// passing parameters to a funtcion
+
+
+void Foo(int* pa, int* pb, int* pc)
+{
+	(*pa)++;
+	*pb += 2;
+	(*pc) *=3;
+}
 
 int main()
 {
-	const int size = 7;
-	int arr[size]{};
-	for (int i = 0; i < size; i++)
-	{
-		arr[i] = rand() % 20;
-	}
-	int* pointerArr = arr;
-	cout << arr << endl;
-	cout << pointerArr << endl;
-	for (int i = 0; i < size; i++)
-	{
-		cout << pointerArr[i] << "  ";
-	}
+	int a = 10;
+	int b = 20;
+	int c = 30;
+	cout << "a: " << a << "  b:  " << b << "  c:  " << c << endl;
+	Foo(&a, &b, &c);
+	cout << "a: " << a << "  b:  " << b << "  c:  " << c << endl;
 
-	return 0;
 }
