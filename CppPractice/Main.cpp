@@ -1,34 +1,36 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 
-//Array of unique numbers
+// Smallest number of array
 
 int main()
 {
-	const int size = 10;
+	srand(time(NULL));
+	const int size  = 20;
 	int arr[size]{};
-	bool doubled;
-	int randNumber;
-	for (int i = 0; i < size;)
-	{
-		doubled = false;
-		randNumber = rand() % 20;
-		for (int j = 0; j < i; j++)
-		{
-			if (arr[j] == randNumber)
-			{
-				doubled = true;
-				break;
-			}
-		}
-		if (!doubled)
-		{
-			arr[i] = randNumber;
-				i++;
-		}
-	}
+	
+
 	for (int i = 0; i < size; i++)
 	{
-		cout << arr[i] << '\t';
+		arr[i] = rand()% 100;
 	}
+
+	int sm = arr[0];
+
+	for (int i = 0; i < size;i++)
+	{
+		if (sm > arr[i])
+		{
+			sm = arr[i];
+		}
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "  ";
+	}
+
+	cout << "Smallest number of array is:   " << sm << endl;
+	return 0;
 }
