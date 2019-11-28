@@ -1,22 +1,13 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#define PI 3.14
+#define Foo(x, y) (x+y*PI);
 using namespace std;
 
-//Pass function pointer to the function as argument
-
-string InfoSource()
-{
-	return "I ma from Japain";
-}
-void ShowInfo(string (*foo)())
-{
-	cout << foo() << endl;
-	
-}
+// Define. Macro function
 
 int main()
 {
-	ShowInfo(InfoSource);
-
+	double z = Foo(4.8, 6.7);
+	cout << z;
 	return 0;
 }
