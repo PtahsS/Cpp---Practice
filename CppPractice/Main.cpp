@@ -2,35 +2,36 @@
 #include <ctime>
 using namespace std;
 
-// Smallest number of array
+// Two-dimensional array
 
 int main()
 {
 	srand(time(NULL));
-	const int size  = 20;
-	int arr[size]{};
+	const int row = 5;
+	const int col = 10;
+	int arr[row][col]{};
 	
 
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < row; i++)
 	{
-		arr[i] = rand()% 100;
-	}
-
-	int sm = arr[0];
-
-	for (int i = 0; i < size;i++)
-	{
-		if (sm > arr[i])
+		for (int j = 0; j < col; j++)
 		{
-			sm = arr[i];
+			arr[i][j] = rand() % 100;
+
 		}
 	}
 
-	for (int i = 0; i < size; i++)
+	
+
+	for (int i = 0; i < row; i++)
 	{
-		cout << arr[i] << "  ";
+		for (int j = 0; j < col; j++)
+		{
+			cout << arr[i][j];
+
+		}
+		cout << endl;
 	}
 
-	cout << "Smallest number of array is:   " << sm << endl;
 	return 0;
 }
