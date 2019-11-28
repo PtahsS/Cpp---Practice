@@ -2,18 +2,21 @@
 #include<string>
 using namespace std;
 
-// Bool argument of function
+//Pass function pointer to the function as argument
 
-
-void ShowInfo(bool fromSpace)
+string InfoSource()
 {
-	fromSpace?cout << "Information from space":cout << "No info";
+	return "I ma from Japain";
+}
+void ShowInfo(string (*foo)())
+{
+	cout << foo() << endl;
 	
 }
 
 int main()
 {
-	ShowInfo(true);
+	ShowInfo(InfoSource);
 
 	return 0;
 }
