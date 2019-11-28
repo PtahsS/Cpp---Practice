@@ -2,40 +2,67 @@
 #include <ctime>
 using namespace std;
 
-// Dynamic arrays. Crete, print.
+// Change size of an array. Push, pop.
 
-void FillArray(int* const arr, const int size)
+void FillArr(int* arr, const int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		arr[i] = rand() % 40;
+		arr[i] = rand()% 50;
 	}
 }
-void PrintArray(const int* const arr, const int size)
+
+void PrintArr(const int* arr, const int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		cout << arr[i] << '\t';
+		cout << arr[i] << "  ";
 	}
 	cout << endl;
+}
+
+void PushBack(int*& arr, int& size,int const value)
+{
+	int* tempArr = new int[size + 1];
+	for (int i = 0; i < size; i++)
+	{
+		tempArr[i] = arr[i];
+	}
+	tempArr[size] = value;
+	size++;
+	delete[]arr;
+	arr = tempArr;
+	
+}
+void PopBack(int*& arr, int& size)
+{
+	int* tempArr = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		tempArr[i] = arr[i];
+	}
+	size--;
+	delete[] arr;
+		arr = tempArr;
 }
 
 int main()
 {
 	srand(time(NULL));
-	int size;
-	cout << "Enter size of array:  ";
-	cin >> size;
-
+	int size = 10;
 	int* arr = new int[size];
-	FillArray(arr, size);
-	PrintArray(arr, size);
-	delete[] arr;
+	FillArr(arr, size);
+	PrintArr(arr, size);
+	PushBack(arr, size, 101);
+	PrintArr(arr, size);
+	PopBack(arr, size);
+	PrintArr(arr, size);
+	PopBack(arr, size);
+	PrintArr(arr, size);
+	PopBack(arr, size);
+	PrintArr(arr, size);
 
-	int* arr2 = new int[size];
-	FillArray(arr2, size);
-	PrintArray(arr2, size);
-	delete[] arr2;
+
 
 	return 0;
 }
