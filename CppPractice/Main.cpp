@@ -1,16 +1,19 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
-// StrCat. Contatenation of strings.
+// String library.
 
 
 
 
 int main()
 {
-	char a[100] = "Concatenation ";
-	char b[100] = "of string";
-	strcat_s(a, b);
-	cout << a;
+	string str1 = "This is ";
+	string str2 = "a string ";
+	string str3 = "library.";
+	string result;
+	result = str1 + str2 + str3;
+	cout << result;
 	return 0;
 }
