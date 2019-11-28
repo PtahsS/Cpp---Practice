@@ -1,25 +1,22 @@
 #include <iostream>
 using namespace std;
 
-// variables a,b exchange
-
-
-void Foo(int* pa, int* pb)
-{
-	int temp = (*pa);
-	(*pa) = (*pb);
-	(*pb) = temp;
-}
+// Link and pointer
 
 int main()
 {
-	int a = 10;
-	int b = 20;
-	
-	cout << "a: " << a << "  b:  " << b << endl;
+	int a = 5;
+	int* pa = &a;
+	int& aref = a;
 
-	Foo(&a, &b);
 
-	cout << "a: " << a << "  b:  " << b << endl;
-
+	cout << "a: " << a << endl;
+	cout << "aref" << '\t' << aref << endl;
+	aref = aref + 2;
+	cout << "aref" << '\t' << aref << endl;
+	aref = 555;
+	cout << "a: " << a << endl;
+	cout << "pa:  " << pa << endl
+		<< "*pa:  " << *pa << endl;
+	return 0;
 }
