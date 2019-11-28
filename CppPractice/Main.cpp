@@ -1,23 +1,25 @@
 #include <iostream>
 using namespace std;
 
-// passing parameters to a funtcion
+// variables a,b exchange
 
 
-void Foo(int* pa, int* pb, int* pc)
+void Foo(int* pa, int* pb)
 {
-	(*pa)++;
-	*pb += 2;
-	(*pc) *=3;
+	int temp = (*pa);
+	(*pa) = (*pb);
+	(*pb) = temp;
 }
 
 int main()
 {
 	int a = 10;
 	int b = 20;
-	int c = 30;
-	cout << "a: " << a << "  b:  " << b << "  c:  " << c << endl;
-	Foo(&a, &b, &c);
-	cout << "a: " << a << "  b:  " << b << "  c:  " << c << endl;
+	
+	cout << "a: " << a << "  b:  " << b << endl;
+
+	Foo(&a, &b);
+
+	cout << "a: " << a << "  b:  " << b << endl;
 
 }
