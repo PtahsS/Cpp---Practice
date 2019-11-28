@@ -1,18 +1,25 @@
 #include<iostream>
 using namespace std;
 
-// Strlen
+// StrLen making
 
-void Foo(const char* str)
+void StrLen(const char* str)
 {
-	cout << strlen(str);
+	int size = 0;
+	while (str[size] != '\0')
+	{
+		size++;
+	}
+	cout << size;
 }
 
 int main()
 {
 	const char* str =  "Hello,world!";
 	
-	Foo(str);
+	cout << str << endl;
+
+	StrLen(str);
 
 	return 0;
 }
