@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
 
-// Recursion
+// Factorial
 
-int Foo(int a)
+int Factorial(int a)
 {
 	if (a < 1)
 	{
-		return 0;
+		return 1;
 	}
-	cout << a<< "  ";
-	Foo(a - 1);
+	return a*Factorial(a - 1);
 }
 
 int main()
 {
-	int a = 10;
-	Foo(a);
+	int a = 5;
+	cout << Factorial(a);
 	return 0;
 }
