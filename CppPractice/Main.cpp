@@ -2,25 +2,34 @@
 #include <ctime>
 using namespace std;
 
-// Addition function
+// FillArray & PrintArray
 
-int Sum(int a, int b)
+void FillArray(int arr[], const int size)
 {
-	return(a + b);
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 100;
+	}
 }
+
+void PrintArray(int arr[], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "  ";
+	}
+	cout << endl;
+}
+
 
 int main()
 {
-	cout << "Addition function";
-	int a, b, c;
-	cout << "Enter first number:   ";
-	cin >> a;
+	srand(time(NULL));
+	const int size = 10;
+	int arr[size]{};
+	FillArray(arr, size);
+	PrintArray(arr, size);
 
-	cout << "Enter second number:   ";
-	cin >> b;
-
-	c = Sum(a, b);
-	cout << "Answer is " << c << '.'<< endl;
 
 	return 0;
 }
