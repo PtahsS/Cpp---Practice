@@ -1,21 +1,23 @@
 #include <iostream>
 using namespace std;
 
-// Change values of variables in function 
+// Change values of variables in function with links
 
-void Foo(int& a, int& b, int& c)
+void Change(int& a, int& b)
 {
-	a = 2;
-	b = 3;
-	c = 4;
+	int temp = a;
+	a = b;
+	b = temp;
 }
 
 int main()
 {
 	int a = 10;
 	int b = 20;
-	int c = 30;
-	Foo(a, b, c);
-	cout << a << "  " << b << "  " << c << endl;
+	cout << a << " : " << b << endl;
+	Change(a, b);
+	cout << a <<  " : "  << b << endl;
+
+
 	return 0;
 }
