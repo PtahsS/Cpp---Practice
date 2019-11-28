@@ -1,68 +1,15 @@
-#include <iostream>
-#include <ctime>
+#include<iostream>
 using namespace std;
 
-// Change size of an array. Push, pop.
+// Stiring. Array of string
 
-void FillArr(int* arr, const int size)
+void main()
 {
-	for (int i = 0; i < size; i++)
-	{
-		arr[i] = rand()% 50;
-	}
-}
-
-void PrintArr(const int* arr, const int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << "  ";
-	}
-	cout << endl;
-}
-
-void PushBack(int*& arr, int& size,int const value)
-{
-	int* tempArr = new int[size + 1];
-	for (int i = 0; i < size; i++)
-	{
-		tempArr[i] = arr[i];
-	}
-	tempArr[size] = value;
-	size++;
-	delete[]arr;
-	arr = tempArr;
-	
-}
-void PopBack(int*& arr, int& size)
-{
-	int* tempArr = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		tempArr[i] = arr[i];
-	}
-	size--;
-	delete[] arr;
-		arr = tempArr;
-}
-
-int main()
-{
-	srand(time(NULL));
-	int size = 10;
-	int* arr = new int[size];
-	FillArr(arr, size);
-	PrintArr(arr, size);
-	PushBack(arr, size, 101);
-	PrintArr(arr, size);
-	PopBack(arr, size);
-	PrintArr(arr, size);
-	PopBack(arr, size);
-	PrintArr(arr, size);
-	PopBack(arr, size);
-	PrintArr(arr, size);
-
-
-
-	return 0;
+	char symbol = 'a';
+	cout << symbol << endl;
+	char string[] = "Hello";
+	cout << string << endl;
+	char string1[] = { 'H','e','l','l','o','\0' };
+	cout << string1 << endl;
+	cout << strlen(string1) << endl;
 }
