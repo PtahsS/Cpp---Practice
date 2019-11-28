@@ -1,21 +1,34 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
+
+//Array of unique numbers
 
 int main()
 {
-	setlocale(LC_ALL, "Rus");
-	int height, width;
-	cout << "Enter height of rectangle:   " ;
-	cin >> height;
-	cout << "Enter width of rectangle:   ";
-	cin >> width;
-	for (int i = 0; i < height; i++)
+	const int size = 10;
+	int arr[size]{};
+	bool doubled;
+	int randNumber;
+	for (int i = 0; i < size;)
 	{
-		for (int j = 0; j < width; j++)
+		doubled = false;
+		randNumber = rand() % 20;
+		for (int j = 0; j < i; j++)
 		{
-			(i == 0 || i == height-1 || j == 0 || j == width-1) ? cout << " * " : cout << "   ";
+			if (arr[j] == randNumber)
+			{
+				doubled = true;
+				break;
+			}
 		}
-		cout << endl;
+		if (!doubled)
+		{
+			arr[i] = randNumber;
+				i++;
+		}
 	}
-	return 0;
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << '\t';
+	}
 }
