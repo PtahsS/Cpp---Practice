@@ -2,34 +2,28 @@
 #include <ctime>
 using namespace std;
 
-// FillArray & PrintArray
+// Function overload;
 
-void FillArray(int arr[], const int size)
+int Sum(int a, int b)
 {
-	for (int i = 0; i < size; i++)
-	{
-		arr[i] = rand() % 100;
-	}
+	return (a + b);
+}
+double Sum(double a, double b)
+{
+	return (a + b);
 }
 
-void PrintArray(int arr[], const int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << "  ";
-	}
-	cout << endl;
-}
 
 
 int main()
 {
-	srand(time(NULL));
-	const int size = 10;
-	int arr[size]{};
-	FillArray(arr, size);
-	PrintArray(arr, size);
+	int c;
+	double d;
+	c = Sum(5, 8);
+	cout << c << endl;
 
+	d = Sum(5.34, 8.12);
+	cout << d << endl;
 
 	return 0;
 }
