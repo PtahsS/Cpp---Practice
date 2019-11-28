@@ -1,19 +1,18 @@
 #include<iostream>
 using namespace std;
 
-// ASCII symbols
+// Strlen
 
-void main()
+void Foo(const char* str)
 {
-	for (int i = 0; i < 255; i++)
-	{
-		if (i % 5 == 0)
-		{
-			cout << endl << endl;
-		}
-		cout << i << ":" << (char)i <<"     ";
-		
+	cout << strlen(str);
+}
 
-		
-	}
+int main()
+{
+	const char* str =  "Hello,world!";
+	
+	Foo(str);
+
+	return 0;
 }
