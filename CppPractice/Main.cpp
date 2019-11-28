@@ -1,16 +1,15 @@
-#include<iostream>
-#define DEBUG 8
+#include <iostream>
 using namespace std;
-
-//Conditional compilation. ifdef else endif
+// Conditional ternary operator
 
 int main()
 {
-#if DEBUG == 10
-	cout << "I love mathematic";
-#elif DEBUG>5
-	cout << "I love english";
-#endif
+	int a;
+	cout << "Enter your number:  ";
+	cin >> a;
+	a < 10 ? cout << "It is smaller then 10" :
+		a>10 ? cout << "It is bigger then 10" :
+		cout << "It is 10!!!";
 	
 	return 0;
 }
