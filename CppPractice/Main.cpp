@@ -1,15 +1,14 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
-// Stiring. Array of string
+// Type conversion
 
 void main()
 {
-	char symbol = 'a';
-	cout << symbol << endl;
-	char string[] = "Hello";
-	cout << string << endl;
-	char string1[] = { 'H','e','l','l','o','\0' };
-	cout << string1 << endl;
-	cout << strlen(string1) << endl;
+	int a = 34;
+	double b = 56.4;
+	cout << "a: " << a << endl;
+	cout << "b (int): " << (int)b << endl;
+	cout << "b: " << b << endl;
 }
