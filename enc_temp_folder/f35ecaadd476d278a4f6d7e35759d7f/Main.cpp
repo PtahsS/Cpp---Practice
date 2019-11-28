@@ -2,7 +2,7 @@
 #include <ctime>
 using namespace std;
 
-// Two-dimensional dynamic array. Create, fill, print
+// Dynamic array. Creating, filling, printing
 
 int main()
 {
