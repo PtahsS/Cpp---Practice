@@ -2,18 +2,19 @@
 #include<string>
 using namespace std;
 
-// String library.
+// Function pointer as parameter
 
 
-
+void Foo2(int a)
+{
+	cout << "void Foo2() printed";
+}
 
 int main()
 {
-	string str1 = "This is ";
-	string str2 = "a string ";
-	string str3 = "library.";
-	string result;
-	result = str1 + str2 + str3;
-	cout << result;
+	void(*fooPointer)(int a);
+	fooPointer = Foo2;
+	fooPointer(5);
+
 	return 0;
 }
