@@ -1,25 +1,16 @@
 #include<iostream>
 using namespace std;
 
-// StrLen making
+// StrCat. Contatenation of strings.
 
-void StrLen(const char* str)
-{
-	int size = 0;
-	while (str[size] != '\0')
-	{
-		size++;
-	}
-	cout << size;
-}
+
+
 
 int main()
 {
-	const char* str =  "Hello,world!";
-	
-	cout << str << endl;
-
-	StrLen(str);
-
+	char a[100] = "Concatenation ";
+	char b[100] = "of string";
+	strcat_s(a, b);
+	cout << a;
 	return 0;
 }
