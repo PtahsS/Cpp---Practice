@@ -2,36 +2,25 @@
 #include <ctime>
 using namespace std;
 
-// Two-dimensional array
+// Addition function
+
+int Sum(int a, int b)
+{
+	return(a + b);
+}
 
 int main()
 {
-	srand(time(NULL));
-	const int row = 5;
-	const int col = 10;
-	int arr[row][col]{};
-	
+	cout << "Addition function";
+	int a, b, c;
+	cout << "Enter first number:   ";
+	cin >> a;
 
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			arr[i][j] = rand() % 100;
+	cout << "Enter second number:   ";
+	cin >> b;
 
-		}
-	}
-
-	
-
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			cout << arr[i][j];
-
-		}
-		cout << endl;
-	}
+	c = Sum(a, b);
+	cout << "Answer is " << c << '.'<< endl;
 
 	return 0;
 }
