@@ -1,15 +1,29 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 
-// Work with dynamic memory. Variable
-
+// Dynamic array. Creating, filling, printing
 
 int main()
 {
-	int* pa = new int;
-	*pa = 10;
-	cout << pa << "   " << *pa << endl;
-	delete pa;
+	srand(time(NULL));
 
+	cout << "Enter size of dynamic array:   ";
+	int size;
+	cin >> size;
+	cout << endl;
+
+	int* arr = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 100;
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr + i << ':' << arr[i] << '\t';
+	}
+	cout << endl;
+	
 	return 0;
 }
