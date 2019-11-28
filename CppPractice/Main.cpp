@@ -1,23 +1,15 @@
 #include <iostream>
 using namespace std;
 
-// Change values of variables in function with links
+// Work with dynamic memory. Variable
 
-void Change(int& a, int& b)
-{
-	int temp = a;
-	a = b;
-	b = temp;
-}
 
 int main()
 {
-	int a = 10;
-	int b = 20;
-	cout << a << " : " << b << endl;
-	Change(a, b);
-	cout << a <<  " : "  << b << endl;
-
+	int* pa = new int;
+	*pa = 10;
+	cout << pa << "   " << *pa << endl;
+	delete pa;
 
 	return 0;
 }
