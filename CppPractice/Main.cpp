@@ -1,17 +1,15 @@
 #include <iostream>
-#include <ctime>
 using namespace std;
 
-// Function overload;
+// Template function
 
-int Sum(int a, int b)
+template <typename T1, typename T2>
+
+T1 Sum(T1 a, T2 b)
 {
 	return (a + b);
 }
-double Sum(double a, double b)
-{
-	return (a + b);
-}
+
 
 
 
@@ -22,7 +20,7 @@ int main()
 	c = Sum(5, 8);
 	cout << c << endl;
 
-	d = Sum(5.34, 8.12);
+	d = Sum(5, 8.67);
 	cout << d << endl;
 
 	return 0;
