@@ -2,19 +2,18 @@
 #include<string>
 using namespace std;
 
-// Function pointer as parameter
+// Bool argument of function
 
 
-void Foo2(int a)
+void ShowInfo(bool fromSpace)
 {
-	cout << "void Foo2() printed";
+	fromSpace?cout << "Information from space":cout << "No info";
+	
 }
 
 int main()
 {
-	void(*fooPointer)(int a);
-	fooPointer = Foo2;
-	fooPointer(5);
+	ShowInfo(true);
 
 	return 0;
 }
