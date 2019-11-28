@@ -1,27 +1,21 @@
 #include <iostream>
 using namespace std;
 
-// Template function
+// Recursion
 
-template <typename T1, typename T2>
-
-T1 Sum(T1 a, T2 b)
+int Foo(int a)
 {
-	return (a + b);
+	if (a < 1)
+	{
+		return 0;
+	}
+	cout << a<< "  ";
+	Foo(a - 1);
 }
-
-
-
 
 int main()
 {
-	int c;
-	double d;
-	c = Sum(5, 8);
-	cout << c << endl;
-
-	d = Sum(5, 8.67);
-	cout << d << endl;
-
+	int a = 10;
+	Foo(a);
 	return 0;
 }
