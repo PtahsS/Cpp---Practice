@@ -1,13 +1,21 @@
-#include <iostream>
-#define PI 3.14
-#define Foo(x, y) (x+y*PI);
+#include<iostream>
 using namespace std;
+#define DEBUG
 
-// Define. Macro function
+//Conditional compilation. DEBUG
 
 int main()
 {
-	double z = Foo(4.8, 6.7);
-	cout << z;
+	int value = 0;
+#ifdef DEBUG
+	cout << "Begin to start" << endl;
+#endif
+	for (int i = 0; i < 10; i++)
+	{
+		value++;
+	}
+#ifdef DEBUG
+	cout << "End of circle" << endl;
+#endif
 	return 0;
 }
