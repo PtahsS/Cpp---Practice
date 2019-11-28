@@ -1,14 +1,19 @@
 #include<iostream>
-#include<string>
 using namespace std;
 
-// Type conversion
+// ASCII symbols
 
 void main()
 {
-	int a = 34;
-	double b = 56.4;
-	cout << "a: " << a << endl;
-	cout << "b (int): " << (int)b << endl;
-	cout << "b: " << b << endl;
+	for (int i = 0; i < 255; i++)
+	{
+		if (i % 5 == 0)
+		{
+			cout << endl << endl;
+		}
+		cout << i << ":" << (char)i <<"     ";
+		
+
+		
+	}
 }
