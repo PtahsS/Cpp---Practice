@@ -1,43 +1,25 @@
 #include <iostream>
 using namespace std;
 
-// Get, set methods.Encapsulation
+//Encapsulation example "CompOn"
 
-class Point
+class CompOn
 {
-private:
-	int x;
-	int y;
 public:
-	void SetX(int x)
+	void Start()
 	{
-		this->x =x ;
+		isWorking() ? cout << "It is working" : cout << "You have to repair it.";
 	}
-	void SetY(int y)
+private:
+	bool isWorking()
 	{
-		this->y = y;
-	}
-	int GetX()
-	{
-		return this->x;
-	}
-	int GetY()
-	{
-		return this->y;
-	}
-	void Print()
-	{
-		cout << "x: " << this->x << "y:  " << this->y << endl;
+		return false;
 	}
 };
-
 int main()
 {
-	Point a;
-	a.SetX(5);
-	a.SetY(10);
-	a.Print();
-	int c = a.GetX();
-	cout << "c:  " << c << endl;
+	CompOn a;
+	a.Start();
+
 	return 0;
 }
