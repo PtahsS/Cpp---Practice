@@ -1,51 +1,56 @@
 #include <iostream>
 using namespace std;
 
-// Destructor
+// Copy constructor.
 
-class Mydata
+class MyClass
 {
 public:
-	Mydata( int size)
+	MyClass(int size)
 	{
-		this ->size = size;
-		data = new int[size];
+		cout << "arr building   " << this << endl;
+		this->size = size;
+		arr = new int[size];
 		for (int i = 0; i < size; i++)
 		{
-			data[i] = i;
+			arr[i] = i;
 		}
 	}
-	
-	void Print()
+	MyClass(const MyClass& other)
 	{
-		cout << "Creating data" << endl;
+		cout << "copying array   " << this << endl;
+		this->size = other.size;
+		arr = new int[size];
 		for (int i = 0; i < size; i++)
 		{
-			cout << data[i] << "  ";
+			this->arr[i] = other.arr[i]+3;
+		}
+	}
+	void Print()
+	{
+		cout << "Printing.....  " << this << endl;
+		for (int i = 0; i < size; i++)
+		{
+			cout << arr[i] << "  ";
 		}
 		cout << endl;
 	}
-	~Mydata()
+	~MyClass()
 	{
-		delete[] data;
-		cout << "destructor" << endl;
+		
+		delete[] arr;
+		cout << "destructor   " << this<< endl;
 	}
-	
 private:
-	int* data;
 	int size;
+	int* arr;
 };
-void Go()
-	{
-		for (int i = 0; i < 4; i++)
-		{
-			Mydata a(5);
-			a.Print();
-		}
-	}
 int main()
 {
-	Go();
+	MyClass a(7);
+	MyClass b(a);
+	a.Print();
+	b.Print();
 
 	return 0;
 }
