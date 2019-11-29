@@ -1,28 +1,43 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-//Class access modifier
+// Get, set methods.Encapsulation
 
 class Point
 {
+private:
+	int x;
+	int y;
 public:
-	int x = 9;
-
+	void SetX(int x)
+	{
+		this->x =x ;
+	}
+	void SetY(int y)
+	{
+		this->y = y;
+	}
+	int GetX()
+	{
+		return this->x;
+	}
+	int GetY()
+	{
+		return this->y;
+	}
 	void Print()
 	{
-		cout << "y= " << y << "\n"<<
-				"x= " << x << "\n" <<
-				"z = " << z << endl;
+		cout << "x: " << this->x << "y:  " << this->y << endl;
 	}
-
-private:
-	int z = 8;
-	int y = 7;
 };
 
 int main()
 {
 	Point a;
+	a.SetX(5);
+	a.SetY(10);
 	a.Print();
+	int c = a.GetX();
+	cout << "c:  " << c << endl;
+	return 0;
 }
