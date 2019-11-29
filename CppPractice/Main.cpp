@@ -1,27 +1,28 @@
 #include <iostream>
 #include <string>
 using namespace std;
-// Class Human. OOP
 
-class Human
+//Class access modifier
+
+class Point
 {
 public:
-	int age;
-	string name;
-	int weight;
+	int x = 9;
+
+	void Print()
+	{
+		cout << "y= " << y << "\n"<<
+				"x= " << x << "\n" <<
+				"z = " << z << endl;
+	}
 
 private:
+	int z = 8;
+	int y = 7;
 };
+
 int main()
 {
-	Human Petrov;
-	Petrov.age = 30;
-	Petrov.name = "Ivan";
-	Petrov.weight = 100;
-
-	cout << "My name is " << Petrov.name << ", I am "
-		<< Petrov.age << " years old. My weight is "
-		<< Petrov.weight << " kg.";
-
-	return 0;
+	Point a;
+	a.Print();
 }
