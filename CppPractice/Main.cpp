@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Overloading parameter classes
+// Overloading parameter classes 2
 
 class Point
 {
@@ -16,21 +16,14 @@ public:
 		this->x = x;
 		this->y = y;
 	}
-	void SetX(int x)
+	Point(bool a, bool b)
 	{
-		this->x = x;
+		a ? this->x = 1000 : this->y = 0;
+		b ? this->y = 1000 : this->y = 0;
 	}
-	void SetY(int y)
+	Point(string str)
 	{
-		this->y = y;
-	}
-	int GetX()
-	{
-		return this->x;
-	}
-	int GetY()
-	{
-		return this->y;
+		str == "top" ? (this->x = 500, this->y = 1000) : (this->x = 20, this->y = 20);
 	}
 	void Print()
 	{
@@ -47,13 +40,14 @@ int main()
 	int y = 5;
 	Point a;
 	a.Print();
-	a.SetX(10);
-	a.Print();
 	Point b(6, 17);
 	b.Print();
-	int c = b.GetY();
-	cout << c;
-
+	Point c(true, false);
+	c.Print();
+	Point s("top");
+	s.Print();
+	Point f("mistake");
+	f.Print();
 
 	return 0;
 }
