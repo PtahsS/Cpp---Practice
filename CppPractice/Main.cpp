@@ -1,45 +1,47 @@
 #include <iostream>
+#include<ctime>
 using namespace std;
 
-// Copy constructor.
+//Assignment statement overload
 
-class MyClass
+class ArrAssignment
 {
 public:
-	MyClass(int size)
+	ArrAssignment(int size)
 	{
-		cout << "arr building   " << this << endl;
 		this->size = size;
 		arr = new int[size];
 		for (int i = 0; i < size; i++)
 		{
-			arr[i] = i;
+			arr[i] = rand() % 100;
 		}
 	}
-	MyClass(const MyClass& other)
+	ArrAssignment& operator =(const ArrAssignment& other)
 	{
-		cout << "copying array   " << this << endl;
 		this->size = other.size;
-		arr = new int[size];
+		if (this->arr != nullptr)
+		{
+			delete[]this->arr;
+		}
+		
+		this->arr = new int[other.size];
 		for (int i = 0; i < size; i++)
 		{
-			this->arr[i] = other.arr[i]+3;
+			this->arr[i] = other.arr[i];
 		}
+		return* this;
+	}
+	~ArrAssignment()
+	{
+		delete[]arr;
 	}
 	void Print()
 	{
-		cout << "Printing.....  " << this << endl;
-		for (int i = 0; i < size; i++)
+		for (int i = 0; i < this->size; i++)
 		{
-			cout << arr[i] << "  ";
+			cout << this->arr[i]<< '\t';
 		}
-		cout << endl;
-	}
-	~MyClass()
-	{
-		
-		delete[] arr;
-		cout << "destructor   " << this<< endl;
+		cout<< this << endl;
 	}
 private:
 	int size;
@@ -47,10 +49,19 @@ private:
 };
 int main()
 {
-	MyClass a(7);
-	MyClass b(a);
+	srand(time(NULL));
+	ArrAssignment a(5);
+	ArrAssignment b(5);
+	ArrAssignment c(5);
+
 	a.Print();
 	b.Print();
+	c.Print();
+	a = b;
+	cout << endl;
+	a.Print();
+	b.Print();
+	c.Print();
 
 	return 0;
 }
