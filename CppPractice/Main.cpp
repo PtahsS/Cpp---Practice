@@ -1,67 +1,43 @@
 #include <iostream>
-#include<ctime>
 using namespace std;
 
-//Assignment statement overload
+// Overloading the equality and inequality operator
 
-class ArrAssignment
+
+class Point
 {
 public:
-	ArrAssignment(int size)
+	Point(int x, int y)
 	{
-		this->size = size;
-		arr = new int[size];
-		for (int i = 0; i < size; i++)
-		{
-			arr[i] = rand() % 100;
-		}
+		this->x = x; 
+		this->y = y;
 	}
-	ArrAssignment& operator =(const ArrAssignment& other)
+
+	bool operator ==(const Point& other)
 	{
-		this->size = other.size;
-		if (this->arr != nullptr)
-		{
-			delete[]this->arr;
-		}
-		
-		this->arr = new int[other.size];
-		for (int i = 0; i < size; i++)
-		{
-			this->arr[i] = other.arr[i];
-		}
-		return* this;
+		return this->x == other.x && this->y == other.y;
 	}
-	~ArrAssignment()
+	bool operator !=(const Point& other)
 	{
-		delete[]arr;
+		return !(this->x == other.x && this->y == other.y);
 	}
-	void Print()
-	{
-		for (int i = 0; i < this->size; i++)
-		{
-			cout << this->arr[i]<< '\t';
-		}
-		cout<< this << endl;
-	}
+	
 private:
-	int size;
-	int* arr;
+	int x;
+	int y;
 };
+
+
 int main()
 {
-	srand(time(NULL));
-	ArrAssignment a(5);
-	ArrAssignment b(5);
-	ArrAssignment c(5);
+	Point a(5, 10);
+	Point b(5, 50);
+	Point c(5, 10);
+	bool result1 = (a == b);
+	cout << result1 << endl;
 
-	a.Print();
-	b.Print();
-	c.Print();
-	a = b;
-	cout << endl;
-	a.Print();
-	b.Print();
-	c.Print();
+	bool result2 = (a == c);
+	cout << result2 << endl;
 
 	return 0;
 }
