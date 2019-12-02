@@ -1,66 +1,69 @@
+// Class String handmade.
+
 #include <iostream>
 using namespace std;
 
-// Overloading the addition operator
-
-class Point
+class MyString
 {
 public:
-	Point(int x, int y)
+	MyString()
 	{
-		this->x = x;
-		this->y = y;
+		this->length = 0;
+		arr = nullptr;
 	}
-	Point()
+	MyString(const char* str)
 	{
-		this->x = 0;
-		this->y = 0;
+		this->length = strlen(str);
+		this->arr = new char[length + 1];
+		for (int i = 0; i < length; i++)
+		{
+			this->arr[i] = str[i];
+		}
+		this->arr[length] = '\0';
 	}
-	
-	bool operator ==(const Point& other)
+	MyString& operator = (const MyString& other)
 	{
-		return (this->x == other.x && this->y == other.y);
+		if (this->arr != nullptr)
+		{
+			delete[] arr;
+		}
+		this->arr = new char[other.length + 1];
+		for (int i = 0; i < other.length; i++)
+		{
+			this->arr[i] = other.arr[i];
+		}
+		this->arr[length] = '\0';
+		return*this;
 	}
-	bool operator !=(const Point& other)
-	{
-		return !(this->x == other.x && this->y == other.y);
-	}
-	Point operator +(const Point& other)
-	{
-		Point temp;
-		temp.x = this->x + other.x;
-		temp.y = this->y + other.y;
-		return temp;
-	}
-
 	void Print()
 	{
-		cout << x << " : " << y<< endl;
+		cout << arr;
 	}
+		~MyString()
+	{
+			delete[]arr;
+	}
+
 private:
-	int x;
-	int y;
+	char* arr;
+	int length;
 };
 
 int main()
 {
-	Point a(5, 10);
-	Point b(10, 15);
-	Point c(5, 10);
+	MyString s1("Hello");
+	MyString s2("world");
 
-	a.Print();
-	b.Print();
-	c.Print();
+	s1.Print();
+	s2.Print();
+
+	s1 = s2;
+
 	cout << endl;
 
-	cout << "a==b" << (a == b) << endl;
-	cout << "a!=b" << (a != b) << endl;
-	cout << "a==c" << (a == c) << endl << endl;
-
-	Point d= a + b;
-
-	d.Print();
-
+	s1.Print();
+	cout << endl;
+	s2.Print();
 
 	return 0;
 }
